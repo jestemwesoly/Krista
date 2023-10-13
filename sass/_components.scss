@@ -1,0 +1,23 @@
+@use './colors' as *;
+@use './animations' as *;
+
+html {
+	// font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: $bg-color;
+	font-family: 'UrbanistVariable';
+}
+
+.wrapper,
+.header {
+	margin: 0 auto;
+	max-width: 1512px;
+	width: 100%;
+}
+
+// .sticky-body {
+// 	overflow: hidden;
+// }
