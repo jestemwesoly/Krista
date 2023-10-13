@@ -2,10 +2,12 @@
 @use './animations' as *;
 
 .header {
-	height: 75vh;
+	height: 73.8vh;
 	position: relative;
+	background-color: lightgray;
 	background-image: url(../img/header-bg-img.png);
-	// background-position: center;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
 
 	.search-box {
@@ -46,7 +48,80 @@
 				text-indent: 3.37rem;
 
 				&::placeholder {
-					color: $txt-color;
+					color: $heading-color;
+				}
+			}
+		}
+	}
+
+	.nav {
+		display: grid;
+		grid-template-rows: repeat(8, 1fr);
+		align-items: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 54.9375rem;
+		height: 40.375rem;
+		border-bottom-left-radius: 12.625rem;
+		background-color: $bg-color;
+
+		&__box {
+			grid-row: 1/3;
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			text-align: center;
+
+			&-link {
+				top: 3.63rem;
+				padding: 0 3.125rem;
+				font-size: 1.5rem;
+				font-weight: 400;
+				text-decoration: none;
+				color: $txt-color;
+				cursor: pointer;
+			}
+		}
+
+		&__heading {
+			grid-row: 3/7;
+			text-align: center;
+
+			&-title {
+				font-size: 4rem;
+				font-weight: 500;
+				color: $heading-color;
+			}
+
+			&-subtitle {
+				display: inline;
+				position: relative;
+				font-size: 2.25rem;
+				font-weight: 500;
+				color: $subtitle;
+				overflow: visible;
+
+				&::before {
+					position: absolute;
+					content: '';
+					top: 1.5rem;
+					left: -0.38rem;
+					width: 2.125rem;
+					height: 0.125rem;
+					background-color: $subtitle;
+					transform: translateX(-100%);
+				}
+
+				&::after {
+					position: absolute;
+					content: '';
+					top: 1.5rem;
+					right: -0.38rem;
+					width: 2.125rem;
+					height: 0.125rem;
+					background-color: $subtitle;
+					transform: translateX(100%);
 				}
 			}
 		}
