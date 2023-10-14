@@ -1,26 +1,26 @@
-@use './colors' as *;
-@use './animations' as *;
+// @use './colors' as *;
+// @use './animations' as *;
 
-@media (min-width: 992px) {
-}
+// @media (min-width: 992px) {
+// }
 
-@media (min-width: 1200px) {
-	.header {
-		height: 46.125rem;
+// @media (min-width: 1200px) {
+// 	.header {
+// 		height: 46.125rem;
 
-		.search-box {
-			top: 3em;
-			left: 6em;
+// 		.search-box {
+// 			top: 3em;
+// 			left: 6em;
 
-			&__form {
-				width: 30.25rem;
-				height: 3.125rem;
+// 			&__form {
+// 				width: 30.25rem;
+// 				height: 3.125rem;
 
-				&-input {
-					font-size: 1.25rem;
-					text-indent: 3.37rem;
-				}
-			}
-		}
-	}
-}
+// 				&-input {
+// 					font-size: 1.25rem;
+// 					text-indent: 3.37rem;
+// 				}
+// 			}
+// 		}
+// 	}
+// }

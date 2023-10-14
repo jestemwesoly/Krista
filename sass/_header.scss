@@ -2,8 +2,11 @@
 @use './animations' as *;
 
 .header {
-	height: 73.8vh;
-	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	// height: 73.8vh;
+	aspect-ratio: 2.048;
 	background-color: lightgray;
 	background-image: url(../img/header-bg-img.png);
 	background-position: center;
@@ -11,22 +14,24 @@
 	background-size: cover;
 
 	.search-box {
-		position: absolute;
-		top: 3em;
-		left: 6em;
+		grid-column: 1/2;
+		grid-row: 1/3;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&__form {
 			position: relative;
-			width: 30.25rem;
-			height: 3.125rem;
+			width: 70%;
+			height: 30%;
 
 			&-button {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				position: absolute;
-				top: 0.86rem;
-				left: 1.28rem;
+				top: 25%;
+				left: 4%;
 				width: fit-content;
 				height: fit-content;
 				border: 1px solid transparent;
@@ -48,50 +53,81 @@
 				text-indent: 3.37rem;
 
 				&::placeholder {
-					color: $heading-color;
+					color: $heading;
 				}
 			}
+
+			// stworzyć skrypt ukrywający napis 'search' w razie wykraczenia się obrazka lupy
 		}
 	}
 
 	.nav {
+		grid-column: 2/3;
+		grid-row: 1/9;
 		display: grid;
 		grid-template-rows: repeat(8, 1fr);
 		align-items: center;
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 54.9375rem;
-		height: 40.375rem;
+		height: 100%;
 		border-bottom-left-radius: 12.625rem;
 		background-color: $bg-color;
+		z-index: 2;
 
 		&__box {
 			grid-row: 1/3;
 			display: flex;
-			justify-content: center;
+			justify-content: space-evenly;
+			align-items: center;
 			width: 100%;
+			height: 100%;
 			text-align: center;
 
 			&-link {
-				top: 3.63rem;
-				padding: 0 3.125rem;
+				position: relative;
 				font-size: 1.5rem;
 				font-weight: 400;
 				text-decoration: none;
 				color: $txt-color;
 				cursor: pointer;
+				transition: color .3s;
+				
+				&::before,
+				&:after {
+					content: '';
+					position: absolute;
+					width: 0;
+					top: 100%;
+					border-bottom: 3px solid $subtitle;
+					transition: width .3s;
+				}
+
+				&::before {
+					right: 50%;
+				}
+
+				&::after {
+					left: 50%;
+				}
+
+				&:hover {
+					color: $heading;
+				}
+
+				&:hover::before,
+				&:hover::after {
+					width: 50%;
+				}
 			}
 		}
 
 		&__heading {
 			grid-row: 3/7;
 			text-align: center;
+			user-select: none;
 
 			&-title {
 				font-size: 4rem;
 				font-weight: 500;
-				color: $heading-color;
+				color: $heading;
 			}
 
 			&-subtitle {
