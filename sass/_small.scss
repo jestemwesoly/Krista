@@ -53,7 +53,7 @@
 			grid-row: 1/9;
 			display: grid;
 			grid-template-rows: repeat(8, 1fr);
-            align-items: center;
+            justify-content:stretch;
             border-bottom-left-radius: 12.625rem;
 
 			&__box {
