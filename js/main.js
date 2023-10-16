@@ -37,14 +37,14 @@
 // handleCurrentYear()
 
 
-const header = document.querySelector('.header')
+// const header = document.querySelector('.header')
 
-const removeHeaderHeight = () => {
-    if (window.innerWidth > 576) {
-        header.classList.remove('header-mobile-height')
-    } else {
-        header.classList.add('header-mobile-height')
-    }
-}
+// const removeHeaderHeight = () => {
+//     if (window.innerWidth < 576) {
+//         header.classList.add('header-mobile-height')
+//     } else {
+//         header.classList.remove('header-mobile-height')
+//     }
+// }
 
-window.addEventListener('resize',removeHeaderHeight)
+// window.addEventListener('resize',removeHeaderHeight)

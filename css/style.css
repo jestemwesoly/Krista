@@ -34,10 +34,6 @@ body {
   width: 100%;
 }
 
-.header-mobile-height {
-  height: 100vh;
-}
-
 .header {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -192,6 +188,11 @@ body {
   }
   .header .nav__heading-subtitle {
     font-size: 1rem;
+  }
+}
+@media (max-width: 575px) {
+  .header {
+    height: 100vh;
   }
 }
 @media (min-width: 576px) {
