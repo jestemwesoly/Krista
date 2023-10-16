@@ -5,8 +5,6 @@
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(10, 1fr);
-	height: 100vh;
-	// doać skrypt usuwający height przy >576px
 	background-color: $mobile-header;
 	background-image: url(../img/header-bg-img.png);
 	background-position: bottom;

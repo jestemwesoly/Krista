@@ -34,11 +34,14 @@ body {
   width: 100%;
 }
 
+.header-mobile-height {
+  height: 100vh;
+}
+
 .header {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  height: 100vh;
   background-color: #B2AFA8;
   background-image: url(../img/header-bg-img.png);
   background-position: bottom;
@@ -179,12 +182,24 @@ body {
   transform: translateX(100%);
 }
 
+@media (max-width: 380px) {
+  .header {
+    background-position-x: 25%;
+    background-size: cover;
+  }
+  .header .nav__heading {
+    height: 80%;
+  }
+  .header .nav__heading-subtitle {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 576px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(9, 1fr);
     min-height: 50vh;
-    aspect-ratio: 2.048;
+    aspect-ratio: 2.048 !important;
     background-color: #d3d3d3;
     background-position: center;
     background-repeat: no-repeat;

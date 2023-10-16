@@ -1,12 +1,27 @@
 @use './colors' as *;
 @use './animations' as *;
 
+@media (max-width: 380px) {
+    .header {
+        background-position-x: 25%;
+        background-size: cover;
+        .nav {
+            &__heading {
+                height: 80%;
+                &-subtitle {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 576px) {
 	.header {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(9, 1fr);
 		min-height: 50vh;
-		aspect-ratio: 2.048;
+		aspect-ratio: 2.048 !important;
 		background-color: $img-bg;
 		background-position: center;
 		background-repeat: no-repeat;
