@@ -18,6 +18,38 @@
   font-style: italic;
   font-display: swap;
 }
+@keyframes swingOne {
+  from {
+    rotate: -2.61deg;
+  }
+  to {
+    rotate: 2.61deg;
+  }
+}
+@keyframes swingTwo {
+  from {
+    rotate: 2.61deg;
+  }
+  to {
+    rotate: -2.61deg;
+  }
+}
+@keyframes reverseSwingOne {
+  from {
+    rotate: 2.442deg;
+  }
+  to {
+    rotate: -2.442deg;
+  }
+}
+@keyframes reverseSwingTwo {
+  from {
+    rotate: -2.442deg;
+  }
+  to {
+    rotate: 2.442deg;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -176,6 +208,107 @@ body {
   height: 0.1rem;
   background-color: #d9d5d1;
   transform: translateX(100%);
+}
+
+.photo-text {
+  padding: 5em 10em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.photo-text__box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5em;
+  align-items: center;
+}
+.photo-text__box-photo {
+  position: relative;
+  width: 23.25rem;
+  height: 33.6875rem;
+  border-radius: 9.375rem;
+  background-size: cover;
+  transform-style: preserve-3d;
+}
+.photo-text__box-photo--one {
+  grid-column: 1/2;
+  background-image: url(../img/img1.jpeg);
+  background-position: 33%;
+}
+.photo-text__box-photo--one::before {
+  rotate: -2.61deg;
+  animation: swingOne 5s infinite alternate;
+}
+.photo-text__box-photo--one::after {
+  rotate: 2.442deg;
+  animation: reverseSwing 5s infinite alternate;
+}
+.photo-text__box-photo--two {
+  grid-column: 3/4;
+  background-image: url(../img/img2.jpeg);
+  background-position: 16.5%;
+}
+.photo-text__box-photo--two::before {
+  rotate: 2.61deg;
+  animation: swingTwo 5s infinite alternate;
+}
+.photo-text__box-photo--two::after {
+  rotate: -2.442deg;
+  animation: reverseSwing 5s infinite alternate;
+}
+.photo-text__box-photo::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 25rem;
+  height: 37.125rem;
+  border: 2px solid #353839;
+  border-radius: 9.375rem;
+  transform: translateZ(-1px);
+}
+.photo-text__box-photo::after {
+  content: "";
+  position: absolute;
+  top: -2.5%;
+  left: -4.5%;
+  width: 24.1875rem;
+  height: 35.16688rem;
+  border: 2px solid #d9d5d1;
+  border-radius: 9.375rem;
+  transform: translateZ(-2px);
+}
+.photo-text__box-text {
+  position: relative;
+}
+.photo-text__box-text--one {
+  grid-column: 2/4;
+}
+.photo-text__box-text--two {
+  grid-column: 1/3;
+}
+.photo-text__box-text-heading {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #353839;
+}
+.photo-text__box-text-paragraph {
+  padding-top: 1.56rem;
+  width: 48.6875rem;
+  height: 14.8125rem;
+  font-size: 1.5rem;
+  line-height: 141.5%;
+  color: #161515;
+}
+.photo-text__box-text-link {
+  position: absolute;
+  padding-top: 3.12rem;
+  right: 0;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #353839;
 }
 
 @media (max-width: 380px) {

@@ -29,3 +29,43 @@
 //         transform: rotate(-360deg);
 //     }
 // }
+
+@keyframes swingOne {
+    from {
+        rotate: -2.61deg;
+    }
+
+    to {
+        rotate: 2.61deg;
+    }
+}
+
+@keyframes swingTwo {
+    from {
+        rotate: 2.61deg;
+    }
+
+    to {
+        rotate: -2.61deg;
+    }
+}
+
+@keyframes reverseSwingOne {
+    from {
+        rotate: 2.442deg;
+    }
+
+    to {
+        rotate: -2.442deg;
+    }
+}
+
+@keyframes reverseSwingTwo {
+    from {
+        rotate: -2.442deg;
+    }
+
+    to {
+        rotate: 2.442deg;
+    }
+}
